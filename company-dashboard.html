@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard - ThesisBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Navigation -->
+    <nav class="navbar dashboard-nav">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="logo-design">
+                        <span class="logo-icon">🎓</span>
+                        <span class="logo-text">
+                            <span class="thesis">Thesis</span><span class="bridge">Bridge</span>
+                        </span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse-projects.html">Browse Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="student-dashboard.html">Student Dashboard</a></li>
+                    <li><a href="company-dashboard.html" class="active">Company Dashboard</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary">Post New Project</button>
+                    <div class="user-menu">
+                        <div class="user-avatar">TI</div>
+                        <span class="user-name">TechInnovate</span>
+                        <button class="dropdown-toggle">▼</button>
+                        <div class="dropdown-menu">
+                            <a href="#company-profile">Company Profile</a>
+                            <a href="#billing">Billing</a>
+                            <a href="#settings">Settings</a>
+                            <a href="index.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-text">
+                    <h1>Welcome, TechInnovate! 🚀</h1>
+                    <p>You have 8 new applications and 12 students matched to your projects</p>
+                </div>
+                <button class="btn btn-primary">Post New Project</button>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Active Projects</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Total Applicants</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3>3</h3>
+                        <p>Students Hired</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                        <h3>4.8</h3>
+                        <p>Company Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Active Projects -->
+                <section class="dashboard-section">
+                    <div class="section-title">
+                        <h2>Active Projects</h2>
+                        <a href="#all-projects" class="view-all">View All →</a>
+                    </div>
+                    <div class="projects-list">
+                        <div class="company-project-card">
+                            <div class="project-header">
+                                <div class="project-meta">
+                                    <h3>AI-Powered Customer Service Analysis</h3>
+                                    <p class="project-status">Posted 2 weeks ago</p>
+                                </div>
+                                <span class="badge badge-active">Active</span>
+                            </div>
+                            <p class="project-description">Research the effectiveness of AI chatbots in customer service and develop improvement strategies.</p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Applications</span>
+                                    <span class="stat-value">12</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Views</span>
+                                    <span class="stat-value">156</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Matches</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-small">View Applications</button>
+                                <button class="btn btn-primary btn-small">Edit Project</button>
+                            </div>
+                        </div>
+
+                        <div class="company-project-card">
+                            <div class="project-header">
+                                <div class="project-meta">
+                                    <h3>Blockchain in Supply Chain Management</h3>
+                                    <p class="project-status">Posted 1 month ago</p>
+                                </div>
+                                <span class="badge badge-active">Active</span>
+                            </div>
+                            <p class="project-description">Explore blockchain applications for improving transparency and efficiency in supply chains.</p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Applications</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Views</span>
+                                    <span class="stat-value">203</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Matches</span>
+                                    <span class="stat-value">5</span>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-small">View Applications</button>
+                                <button class="btn btn-primary btn-small">Edit Project</button>
+                            </div>
+                        </div>
+
+                        <div class="company-project-card">
+                            <div class="project-header">
+                                <div class="project-meta">
+                                    <h3>IoT Integration for Smart Buildings</h3>
+                                    <p class="project-status">Posted 3 days ago</p>
+                                </div>
+                                <span class="badge badge-new">New</span>
+                            </div>
+                            <p class="project-description">Develop IoT solutions for energy-efficient building management systems.</p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Applications</span>
+                                    <span class="stat-value">4</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Views</span>
+                                    <span class="stat-value">89</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Matches</span>
+                                    <span class="stat-value">3</span>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-small">View Applications</button>
+                                <button class="btn btn-primary btn-small">Edit Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <!-- Quick Actions -->
+                    <div class="sidebar-card">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="action-btn">
+                                <span class="action-icon">➕</span>
+                                <span>Post New Project</span>
+                            </button>
+                            <button class="action-btn">
+                                <span class="action-icon">👥</span>
+                                <span>Browse Students</span>
+                            </button>
+                            <button class="action-btn">
+                                <span class="action-icon">📊</span>
+                                <span>View Analytics</span>
+                            </button>
+                            <button class="action-btn">
+                                <span class="action-icon">⚙️</span>
+                                <span>Settings</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- New Applications -->
+                    <div class="sidebar-card">
+                        <h3>New Applications</h3>
+                        <div class="candidates-list">
+                            <div class="candidate-item">
+                                <div class="candidate-avatar">LP</div>
+                                <div class="candidate-info">
+                                    <h4>Lisa Peeters</h4>
+                                    <p>Computer Science, TU Delft</p>
+                                    <span class="candidate-match">92% Match</span>
+                                </div>
+                            </div>
+                            <div class="candidate-item">
+                                <div class="candidate-avatar">MV</div>
+                                <div class="candidate-info">
+                                    <h4>Mark van der Berg</h4>
+                                    <p>Data Science, Radboud</p>
+                                    <span class="candidate-match">88% Match</span>
+                                </div>
+                            </div>
+                            <div class="candidate-item">
+                                <div class="candidate-avatar">SJ</div>
+                                <div class="candidate-info">
+                                    <h4>Sophie Janssen</h4>
+                                    <p>AI Engineering, UvA</p>
+                                    <span class="candidate-match">85% Match</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-small" style="width: 100%; margin-top: 1rem;">View All Candidates</button>
+                    </div>
+
+                    <!-- Upcoming Interviews -->
+                    <div class="sidebar-card">
+                        <h3>Upcoming Interviews</h3>
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">20</span>
+                                    <span class="month">Nov</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Lisa Peeters</h4>
+                                    <p>3:00 PM - Video Call</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">22</span>
+                                    <span class="month">Nov</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Mark van der Berg</h4>
+                                    <p>10:00 AM - Office Visit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Top Candidates -->
+            <section class="dashboard-section">
+                <div class="section-title">
+                    <h2>Top Matched Candidates</h2>
+                    <a href="#all-candidates" class="view-all">View All →</a>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="candidate-header">
+                            <div class="candidate-avatar large">LP</div>
+                            <span class="match-badge">92% Match</span>
+                        </div>
+                        <h3>Lisa Peeters</h3>
+                        <p class="candidate-education">MSc Computer Science, TU Delft</p>
+                        <div class="candidate-skills">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">NLP</span>
+                        </div>
+                        <p class="candidate-bio">Passionate about AI applications in customer service. Previous research in sentiment analysis and chatbot optimization.</p>
+                        <div class="candidate-actions">
+                            <button class="btn btn-outline btn-small">View Profile</button>
+                            <button class="btn btn-primary btn-small">Contact</button>
+                        </div>
+                    </div>
+
+                    <div class="candidate-card">
+                        <div class="candidate-header">
+                            <div class="candidate-avatar large">MV</div>
+                            <span class="match-badge">88% Match</span>
+                        </div>
+                        <h3>Mark van der Berg</h3>
+                        <p class="candidate-education">MSc Data Science, Radboud University</p>
+                        <div class="candidate-skills">
+                            <span class="skill-tag">Blockchain</span>
+                            <span class="skill-tag">Supply Chain</span>
+                            <span class="skill-tag">Analytics</span>
+                        </div>
+                        <p class="candidate-bio">Experienced in blockchain technology and supply chain optimization. Completed internship at logistics company.</p>
+                        <div class="candidate-actions">
+                            <button class="btn btn-outline btn-small">View Profile</button>
+                            <button class="btn btn-primary btn-small">Contact</button>
+                        </div>
+                    </div>
+
+                    <div class="candidate-card">
+                        <div class="candidate-header">
+                            <div class="candidate-avatar large">SJ</div>
+                            <span class="match-badge">85% Match</span>
+                        </div>
+                        <h3>Sophie Janssen</h3>
+                        <p class="candidate-education">MSc AI Engineering, University of Amsterdam</p>
+                        <div class="candidate-skills">
+                            <span class="skill-tag">IoT</span>
+                            <span class="skill-tag">Smart Systems</span>
+                            <span class="skill-tag">Energy</span>
+                        </div>
+                        <p class="candidate-bio">Focused on IoT solutions for smart cities. Strong background in embedded systems and energy efficiency.</p>
+                        <div class="candidate-actions">
+                            <button class="btn btn-outline btn-small">View Profile</button>
+                            <button class="btn btn-primary btn-small">Contact</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

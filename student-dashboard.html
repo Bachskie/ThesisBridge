@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - ThesisBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Navigation -->
+    <nav class="navbar dashboard-nav">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="logo-design">
+                        <span class="logo-icon">🎓</span>
+                        <span class="logo-text">
+                            <span class="thesis">Thesis</span><span class="bridge">Bridge</span>
+                        </span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse-projects.html">Browse Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="student-dashboard.html" class="active">Student Dashboard</a></li>
+                    <li><a href="company-dashboard.html">Company Dashboard</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <div class="user-menu">
+                        <div class="user-avatar">JD</div>
+                        <span class="user-name">John Doe</span>
+                        <button class="dropdown-toggle">▼</button>
+                        <div class="dropdown-menu">
+                            <a href="#profile">Profile Settings</a>
+                            <a href="#notifications">Notifications</a>
+                            <a href="index.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-text">
+                    <h1>Welcome back, John! 👋</h1>
+                    <p>You have 3 new project matches and 2 messages waiting</p>
+                </div>
+                <button class="btn btn-primary">Complete Your Profile</button>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Applications Sent</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3>3</h3>
+                        <p>Interviews Scheduled</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Active Conversations</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                        <h3>95%</h3>
+                        <p>Profile Completion</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Recommended Projects -->
+                <section class="dashboard-section">
+                    <div class="section-title">
+                        <h2>Recommended For You</h2>
+                        <a href="browse-projects.html" class="view-all">View All →</a>
+                    </div>
+                    <div class="projects-list">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="company-logo">TI</div>
+                                <div class="project-meta">
+                                    <h3>AI-Powered Customer Service Analysis</h3>
+                                    <p class="company-name">TechInnovate B.V.</p>
+                                </div>
+                                <span class="badge badge-new">New</span>
+                            </div>
+                            <p class="project-description">Research the effectiveness of AI chatbots in customer service and develop improvement strategies.</p>
+                            <div class="project-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">UX Research</span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-info">
+                                    <span>📍 Nijmegen, NL</span>
+                                    <span>💰 €500/month</span>
+                                    <span>⏱️ 6 months</span>
+                                </div>
+                                <button class="btn btn-primary btn-small">Apply Now</button>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="company-logo">ES</div>
+                                <div class="project-meta">
+                                    <h3>Sustainable Packaging Solutions</h3>
+                                    <p class="company-name">EcoSolutions NL</p>
+                                </div>
+                                <span class="badge badge-match">95% Match</span>
+                            </div>
+                            <p class="project-description">Investigate biodegradable materials for food packaging and test their commercial viability.</p>
+                            <div class="project-tags">
+                                <span class="tag">Sustainability</span>
+                                <span class="tag">Materials Science</span>
+                                <span class="tag">Business</span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-info">
+                                    <span>📍 Amsterdam, NL</span>
+                                    <span>💰 €750/month</span>
+                                    <span>⏱️ 9 months</span>
+                                </div>
+                                <button class="btn btn-primary btn-small">Apply Now</button>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="company-logo">FT</div>
+                                <div class="project-meta">
+                                    <h3>Blockchain in Supply Chain Management</h3>
+                                    <p class="company-name">FinTech Solutions</p>
+                                </div>
+                            </div>
+                            <p class="project-description">Explore blockchain applications for improving transparency and efficiency in supply chains.</p>
+                            <div class="project-tags">
+                                <span class="tag">Blockchain</span>
+                                <span class="tag">Supply Chain</span>
+                                <span class="tag">Data Analytics</span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-info">
+                                    <span>📍 Rotterdam, NL</span>
+                                    <span>💰 €600/month</span>
+                                    <span>⏱️ 8 months</span>
+                                </div>
+                                <button class="btn btn-outline btn-small">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <!-- Quick Actions -->
+                    <div class="sidebar-card">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button class="action-btn">
+                                <span class="action-icon">📝</span>
+                                <span>Update Resume</span>
+                            </button>
+                            <button class="action-btn">
+                                <span class="action-icon">🔍</span>
+                                <span>Search Projects</span>
+                            </button>
+                            <button class="action-btn">
+                                <span class="action-icon">📅</span>
+                                <span>Schedule Interview</span>
+                            </button>
+                            <button class="action-btn">
+                                <span class="action-icon">💡</span>
+                                <span>Get Tips</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Events -->
+                    <div class="sidebar-card">
+                        <h3>Upcoming Events</h3>
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">24</span>
+                                    <span class="month">Nov</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Interview with TechInnovate</h4>
+                                    <p>10:00 AM - Video Call</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">28</span>
+                                    <span class="month">Nov</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Networking Webinar</h4>
+                                    <p>2:00 PM - Online</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">02</span>
+                                    <span class="month">Dec</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Thesis Proposal Deadline</h4>
+                                    <p>Radboud University</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="sidebar-card">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">✉️</div>
+                                <div class="activity-content">
+                                    <p><strong>New message</strong> from EcoSolutions</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">📋</div>
+                                <div class="activity-content">
+                                    <p><strong>Application viewed</strong> by FinTech Solutions</p>
+                                    <span class="activity-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">⭐</div>
+                                <div class="activity-content">
+                                    <p><strong>New match</strong> based on your profile</p>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Recent Applications -->
+            <section class="dashboard-section">
+                <div class="section-title">
+                    <h2>My Applications</h2>
+                    <a href="#all-applications" class="view-all">View All →</a>
+                </div>
+                <div class="applications-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Company</th>
+                                <th>Applied Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI-Powered Customer Service Analysis</td>
+                                <td>TechInnovate B.V.</td>
+                                <td>Nov 15, 2025</td>
+                                <td><span class="status-badge status-pending">Under Review</span></td>
+                                <td><button class="btn-link">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>Sustainable Packaging Solutions</td>
+                                <td>EcoSolutions NL</td>
+                                <td>Nov 12, 2025</td>
+                                <td><span class="status-badge status-interview">Interview Scheduled</span></td>
+                                <td><button class="btn-link">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>Smart City IoT Infrastructure</td>
+                                <td>Urban Tech Labs</td>
+                                <td>Nov 8, 2025</td>
+                                <td><span class="status-badge status-accepted">Accepted</span></td>
+                                <td><button class="btn-link">View Contract</button></td>
+                            </tr>
+                            <tr>
+                                <td>E-commerce Personalization Engine</td>
+                                <td>RetailAI Group</td>
+                                <td>Nov 5, 2025</td>
+                                <td><span class="status-badge status-rejected">Not Selected</span></td>
+                                <td><button class="btn-link">Feedback</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

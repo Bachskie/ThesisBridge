@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ThesisBridge connects university students with companies for product research and thesis projects">
+    <title>ThesisBridge - Connecting Students with Companies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-design">
+                        <span class="logo-icon">🎓</span>
+                        <span class="logo-text">
+                            <span class="thesis">Thesis</span><span class="bridge">Bridge</span>
+                        </span>
+                    </div>
+                </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-projects.html">Browse Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="student-dashboard.html">Student Dashboard</a></li>
+                <li><a href="company-dashboard.html">Company Dashboard</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="window.location.href='login.html'">Sign In</button>
+                <button class="btn btn-primary" onclick="window.location.href='signup.html'">Get Started</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Bridge the Gap Between <span class="highlight">Students</span> and <span class="highlight">Innovation</span></h1>
+                    <p class="hero-description">ThesisBridge connects university students seeking real-world research opportunities with companies looking for innovative solutions. Transform thesis projects into valuable partnerships.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="window.location.href='signup.html'">For Students</button>
+                        <button class="btn btn-outline btn-large" onclick="window.location.href='signup.html'">For Companies</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Active Students</p>
+                        </div>
+                        <div class="stat">
+                            <h3>200+</h3>
+                            <p>Partner Companies</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Successful Matches</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-illustration">
+                        <div class="illustration-circle"></div>
+                        <div class="illustration-element element-1"></div>
+                        <div class="illustration-element element-2"></div>
+                        <div class="illustration-element element-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How ThesisBridge Works</h2>
+                <p>A simple three-step process to connect students with companies</p>
+            </div>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="students">For Students</button>
+                <button class="tab-button" data-tab="companies">For Companies</button>
+            </div>
+            <div class="tab-content">
+                <div id="students" class="tab-pane active">
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Create Your Profile</h3>
+                                <p>Sign up and showcase your academic background, research interests, and thesis requirements. Let companies know what you're passionate about.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Browse Opportunities</h3>
+                                <p>Explore real-world projects from companies across various industries. Filter by field, location, and project type to find the perfect match.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Start Collaborating</h3>
+                                <p>Connect with companies, receive mentorship, access resources, and conduct meaningful research that contributes to both your thesis and real innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="companies" class="tab-pane">
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Post Your Challenge</h3>
+                                <p>Define research questions or product challenges you'd like students to explore. Specify the skills and expertise you're looking for.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Review Student Profiles</h3>
+                                <p>Browse qualified students whose interests align with your needs. Review their academic achievements, skills, and research proposals.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Collaborate & Innovate</h3>
+                                <p>Work with bright minds on fresh solutions. Gain valuable insights, potential recruits, and contribute to academic advancement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose ThesisBridge</h2>
+                <p>The platform that creates win-win partnerships</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎓</div>
+                    <h3>Real-World Experience</h3>
+                    <p>Students gain practical industry experience while companies access fresh academic perspectives and research capabilities.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Verified Partnerships</h3>
+                    <p>All students and companies are verified to ensure quality connections and legitimate research opportunities.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h3>Innovation Focus</h3>
+                    <p>Access cutting-edge research and innovative solutions to real business challenges through academic collaboration.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Global Network</h3>
+                    <p>Connect with students and companies worldwide across multiple industries and research fields.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Data-Driven Matching</h3>
+                    <p>Our intelligent algorithm ensures the best fit between student expertise and company needs.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>Secure & Confidential</h3>
+                    <p>NDA templates, IP protection guidelines, and secure communication channels protect all parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Hear from students and companies who've found success through ThesisBridge</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"ThesisBridge connected me with an amazing tech company where I could research AI applications. Not only did I complete my thesis, but I also received a job offer!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Martinez</h4>
+                            <p>Computer Science Graduate, MIT</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"We found three brilliant students who helped us research sustainable packaging solutions. Their fresh perspectives led to innovations we're now implementing company-wide."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JC</div>
+                        <div class="author-info">
+                            <h4>James Chen</h4>
+                            <p>Innovation Director, EcoPackage Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The platform made it incredibly easy to find a company aligned with my research interests. The mentorship I received was invaluable for both my thesis and career development."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EP</div>
+                        <div class="author-info">
+                            <h4>Emma Peterson</h4>
+                            <p>Business Analytics Student, Oxford</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Bridge the Gap?</h2>
+                <p>Join thousands of students and companies creating meaningful partnerships</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='signup.html'">Sign Up as Student</button>
+                    <button class="btn btn-white btn-large" onclick="window.location.href='signup.html'">Sign Up as Company</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions? We're here to help you get started.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@thesisbridge.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+ xx xxxxxx</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🏢</span>
+                            <div>
+                                <h4>Office</h4>
+                                <p>Nijmegen, Netherlands</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">I am a...</option>
+                                <option value="student">Student</option>
+                                <option value="company">Company Representative</option>
+                                <option value="university">University Administrator</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🎓</span>
+                        <h3><span class="thesis">Thesis</span><span class="bridge">Bridge</span></h3>
+                    </div>
+                    <p>Connecting students with companies for innovative research partnerships.</p>
+                    <p class="footer-location">📍 Nijmegen, Netherlands</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>For Students</h4>
+                    <ul>
+                        <li><a href="browse-projects.html">Browse Projects</a></li>
+                        <li><a href="student-dashboard.html">Student Dashboard</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Companies</h4>
+                    <ul>
+                        <li><a href="company-dashboard.html">Company Dashboard</a></li>
+                        <li><a href="#">Find Students</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ThesisBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

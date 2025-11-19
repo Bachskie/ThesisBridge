@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ThesisBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+    <!-- Simple Navigation -->
+    <nav class="auth-nav">
+        <div class="container">
+            <a href="index.html" class="logo-design">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">
+                    <span class="thesis">Thesis</span><span class="bridge">Bridge</span>
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Signup Form -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Create Your Account</h1>
+                    <p>Join ThesisBridge and start your research journey</p>
+                </div>
+
+                <!-- Account Type Selection -->
+                <div class="account-type-selector">
+                    <button class="type-btn active" data-type="student">
+                        <span class="type-icon">🎓</span>
+                        <span>I'm a Student</span>
+                    </button>
+                    <button class="type-btn" data-type="company">
+                        <span class="type-icon">🏢</span>
+                        <span>I'm a Company</span>
+                    </button>
+                </div>
+
+                <form class="auth-form" id="signupForm">
+                    <!-- Student Form -->
+                    <div id="studentForm" class="form-section">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">University Email</label>
+                            <input type="email" id="email" name="email" placeholder="j.doe@university.nl" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="university">University</label>
+                            <select id="university" name="university" required>
+                                <option value="">Select your university</option>
+                                <option value="radboud">Radboud University</option>
+                                <option value="han">HAN University of Applied Sciences</option>
+                                <option value="tudelft">TU Delft</option>
+                                <option value="uva">University of Amsterdam</option>
+                                <option value="vu">Vrije Universiteit Amsterdam</option>
+                                <option value="uu">Utrecht University</option>
+                                <option value="utwente">University of Twente</option>
+                                <option value="tue">Eindhoven University of Technology</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studyField">Field of Study</label>
+                            <input type="text" id="studyField" name="studyField" placeholder="e.g., Computer Science, Business Analytics" required>
+                        </div>
+                    </div>
+
+                    <!-- Company Form -->
+                    <div id="companyForm" class="form-section" style="display: none;">
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" name="companyName" placeholder="Your Company B.V.">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactFirstName">Contact First Name</label>
+                                <input type="text" id="contactFirstName" name="contactFirstName" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactLastName">Contact Last Name</label>
+                                <input type="text" id="contactLastName" name="contactLastName" placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyEmail">Company Email</label>
+                            <input type="email" id="companyEmail" name="companyEmail" placeholder="contact@company.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companySize">Company Size</label>
+                            <select id="companySize" name="companySize">
+                                <option value="">Select company size</option>
+                                <option value="1-10">1-10 employees</option>
+                                <option value="11-50">11-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="201-500">201-500 employees</option>
+                                <option value="500+">500+ employees</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <input type="text" id="industry" name="industry" placeholder="e.g., Technology, Healthcare, Finance">
+                        </div>
+                    </div>
+
+                    <!-- Common Fields -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span>I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-full">Create Account</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-auth">
+                    <button class="social-btn google-btn">
+                        <span class="social-icon">G</span>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn linkedin-btn">
+                        <span class="social-icon">in</span>
+                        Continue with LinkedIn
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html" class="link">Sign in</a></p>
+                </div>
+            </div>
+
+            <div class="auth-side">
+                <div class="side-content">
+                    <h2>Why Join ThesisBridge?</h2>
+                    <ul class="benefits-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Free to join and use</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Verified companies and opportunities</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>AI-powered matching system</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Direct communication with companies</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Application tracking dashboard</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Career development resources</span>
+                        </li>
+                    </ul>
+                    <div class="stats-showcase">
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Students</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>200+</h3>
+                            <p>Companies</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>85%</h3>
+                            <p>Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // Override auth.js with API integration for signup
+        const signupForm = document.getElementById('signupForm');
+        const typeBtns = document.querySelectorAll('.type-btn');
+        let selectedType = 'student';
+
+        // Handle account type selection
+        typeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                typeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedType = btn.dataset.type;
+                
+                // Toggle form sections
+                document.getElementById('studentForm').style.display = 
+                    selectedType === 'student' ? 'block' : 'none';
+                document.getElementById('companyForm').style.display = 
+                    selectedType === 'company' ? 'block' : 'none';
+            });
+        });
+
+        if (signupForm) {
+            signupForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const submitBtn = signupForm.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Creating account...';
+
+                try {
+                    let userData = { userType: selectedType };
+
+                    if (selectedType === 'student') {
+                        userData.name = `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`;
+                        userData.email = document.getElementById('email').value;
+                        userData.password = document.getElementById('password').value;
+                        userData.university = document.getElementById('university').value;
+                        userData.studyProgram = document.getElementById('program').value;
+                        userData.studyYear = parseInt(document.getElementById('year').value);
+                    } else {
+                        userData.name = document.getElementById('contactName').value;
+                        userData.email = document.getElementById('companyEmail').value;
+                        userData.password = document.getElementById('companyPassword').value;
+                        userData.companyName = document.getElementById('companyName').value;
+                        userData.industry = document.getElementById('industry').value;
+                        userData.companySize = document.getElementById('companySize').value;
+                        userData.location = 'Nijmegen, Netherlands';
+                    }
+
+                    const response = await authAPI.register(userData);
+                    
+                    if (response.success) {
+                        saveUserSession(response.data.token, response.data);
+
+                        // Redirect based on user type
+                        if (response.data.userType === 'student') {
+                            window.location.href = 'student-dashboard.html';
+                        } else {
+                            window.location.href = 'company-dashboard.html';
+                        }
+                    }
+                } catch (error) {
+                    alert(error.message || 'Failed to create account. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Create Account';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
