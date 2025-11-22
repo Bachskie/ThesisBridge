@@ -5,6 +5,23 @@ require('dotenv').config();
 
 // Sample data
 const users = [
+    // Admin
+    {
+        name: 'Admin User',
+        email: 'admin@thesisbridge.nl',
+        password: 'adminpass',
+        userType: 'admin',
+        companyName: 'ThesisBridge Administration',
+        industry: 'Platform Management',
+        companySize: '1-10',
+        location: 'Nijmegen, Netherlands',
+        description: 'Platform administrator with access to all features.',
+        university: 'System',
+        studyProgram: 'Administration',
+        studyYear: 1,
+        skills: ['Administration', 'Management'],
+        bio: 'System administrator account'
+    },
     // Students
     {
         name: 'Sophie van der Berg',

@@ -14,7 +14,10 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please provide an email'],
         unique: true,
         lowercase: true,
-        validate: [validator.isEmail, 'Please provide a valid email']
+        validate: {
+            validator: validator.isEmail,
+            message: 'Please provide a valid email'
+        }
     },
     password: {
         type: String,
@@ -24,7 +27,7 @@ const userSchema = new mongoose.Schema({
     },
     userType: {
         type: String,
-        enum: ['student', 'company'],
+        enum: ['student', 'company', 'admin'],
         required: [true, 'Please specify user type']
     },
     

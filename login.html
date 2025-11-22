@@ -112,6 +112,32 @@
     <script src="api.js"></script>
     <script src="auth.js"></script>
     <script>
+        // Check backend status on load
+        async function checkBackendStatus() {
+            try {
+                const response = await fetch('http://localhost:5000/api/health');
+                const data = await response.json();
+                if (data.status === 'ok') {
+                    console.log('✅ Backend server is running');
+                    return true;
+                }
+            } catch (error) {
+                console.error('❌ Backend server is NOT running');
+                console.error('Please start the server: cd server && npm run dev');
+                
+                // Show warning to user
+                const warning = document.createElement('div');
+                warning.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #ef4444; color: white; padding: 1rem 2rem; border-radius: 8px; z-index: 10000; box-shadow: 0 4px 6px rgba(0,0,0,0.1);';
+                warning.innerHTML = '⚠️ Backend server is not running. Please start it with: <code style="background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px;">cd server && npm run dev</code>';
+                document.body.appendChild(warning);
+                
+                return false;
+            }
+        }
+
+        // Check backend when page loads
+        checkBackendStatus();
+
         // Override auth.js with API integration
         const loginForm = document.querySelector('form');
         
@@ -127,20 +153,33 @@
                 submitBtn.textContent = 'Signing in...';
 
                 try {
+                    console.log('Attempting login for:', email);
                     const response = await authAPI.login(email, password);
                     
+                    console.log('Login response:', response);
+                    
                     if (response.success) {
+                        console.log('Login successful, saving session');
                         saveUserSession(response.data.token, response.data);
+                        
+                        console.log('Session saved, redirecting to dashboard');
 
                         // Redirect based on user type
-                        if (response.data.userType === 'student') {
+                        if (response.data.userType === 'admin') {
+                            // Admin can access both dashboards, default to company dashboard
+                            const dashboardChoice = confirm('Access Company Dashboard? (Cancel for Student Dashboard)');
+                            window.location.href = dashboardChoice ? 'company-dashboard.html' : 'student-dashboard.html';
+                        } else if (response.data.userType === 'student') {
                             window.location.href = 'student-dashboard.html';
                         } else {
                             window.location.href = 'company-dashboard.html';
                         }
+                    } else {
+                        throw new Error('Login failed - no success flag');
                     }
                 } catch (error) {
-                    alert(error.message || 'Failed to sign in. Please check your credentials.');
+                    console.error('Login error:', error);
+                    alert(error.message || 'Failed to sign in. Please check your credentials and ensure the backend server is running.');
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Sign In';
                 }

@@ -12,22 +12,30 @@ async function apiCall(endpoint, options = {}) {
         }
     };
 
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-        ...defaultOptions,
-        ...options,
-        headers: {
-            ...defaultOptions.headers,
-            ...options.headers
+    try {
+        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+            ...defaultOptions,
+            ...options,
+            headers: {
+                ...defaultOptions.headers,
+                ...options.headers
+            }
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || `API request failed with status ${response.status}`);
         }
-    });
 
-    const data = await response.json();
-
-    if (!response.ok) {
-        throw new Error(data.message || 'API request failed');
+        return data;
+    } catch (error) {
+        // Check if it's a network error
+        if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+            throw new Error('Cannot connect to server. Please ensure the backend is running on http://localhost:5000');
+        }
+        throw error;
     }
-
-    return data;
 }
 
 // Auth API
