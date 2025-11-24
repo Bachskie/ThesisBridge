@@ -58,50 +58,17 @@
             <div class="welcome-section">
                 <div class="welcome-text">
                     <h1>Welcome, TechInnovate! 🚀</h1>
-                    <p>You have 8 new applications and 12 students matched to your projects</p>
+                    <p>Manage your thesis projects and review applications</p>
                 </div>
-                <button class="btn btn-primary">Post New Project</button>
+                <button class="btn btn-primary" onclick="openPostProjectModal()">Post New Project</button>
             </div>
 
-            <!-- Stats Overview -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">📋</div>
-                    <div class="stat-info">
-                        <h3>5</h3>
-                        <p>Active Projects</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-info">
-                        <h3>24</h3>
-                        <p>Total Applicants</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">✅</div>
-                    <div class="stat-info">
-                        <h3>3</h3>
-                        <p>Students Hired</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⭐</div>
-                    <div class="stat-info">
-                        <h3>4.8</h3>
-                        <p>Company Rating</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Dashboard Grid -->
+            <!-- Main Dashboard Content -->
             <div class="dashboard-grid">
                 <!-- Active Projects -->
-                <section class="dashboard-section">
+                <section class="dashboard-section" style="grid-column: 1 / -1;">
                     <div class="section-title">
-                        <h2>Active Projects</h2>
-                        <a href="#all-projects" class="view-all">View All →</a>
+                        <h2>My Posted Projects</h2>
                     </div>
                     <div class="projects-list">
                         <div class="company-project-card">
@@ -193,157 +160,30 @@
                     </div>
                 </section>
 
-                <!-- Sidebar -->
-                <aside class="dashboard-sidebar">
-                    <!-- Quick Actions -->
-                    <div class="sidebar-card">
-                        <h3>Quick Actions</h3>
-                        <div class="quick-actions">
-                            <button class="action-btn">
-                                <span class="action-icon">➕</span>
-                                <span>Post New Project</span>
-                            </button>
-                            <button class="action-btn">
-                                <span class="action-icon">👥</span>
-                                <span>Browse Students</span>
-                            </button>
-                            <button class="action-btn">
-                                <span class="action-icon">📊</span>
-                                <span>View Analytics</span>
-                            </button>
-                            <button class="action-btn">
-                                <span class="action-icon">⚙️</span>
-                                <span>Settings</span>
-                            </button>
-                        </div>
+                <!-- Applications Received -->
+                <section class="dashboard-section" style="grid-column: 1 / -1; margin-top: 2rem;">
+                    <div class="section-title">
+                        <h2>Recent Applications</h2>
                     </div>
-
-                    <!-- New Applications -->
-                    <div class="sidebar-card">
-                        <h3>New Applications</h3>
-                        <div class="candidates-list">
-                            <div class="candidate-item">
-                                <div class="candidate-avatar">LP</div>
-                                <div class="candidate-info">
-                                    <h4>Lisa Peeters</h4>
-                                    <p>Computer Science, TU Delft</p>
-                                    <span class="candidate-match">92% Match</span>
-                                </div>
-                            </div>
-                            <div class="candidate-item">
-                                <div class="candidate-avatar">MV</div>
-                                <div class="candidate-info">
-                                    <h4>Mark van der Berg</h4>
-                                    <p>Data Science, Radboud</p>
-                                    <span class="candidate-match">88% Match</span>
-                                </div>
-                            </div>
-                            <div class="candidate-item">
-                                <div class="candidate-avatar">SJ</div>
-                                <div class="candidate-info">
-                                    <h4>Sophie Janssen</h4>
-                                    <p>AI Engineering, UvA</p>
-                                    <span class="candidate-match">85% Match</span>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline btn-small" style="width: 100%; margin-top: 1rem;">View All Candidates</button>
+                    <div class="applications-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Project</th>
+                                    <th>University</th>
+                                    <th>Applied Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicants-tbody">
+                                <!-- Applications will be loaded here -->
+                            </tbody>
+                        </table>
                     </div>
-
-                    <!-- Upcoming Interviews -->
-                    <div class="sidebar-card">
-                        <h3>Upcoming Interviews</h3>
-                        <div class="events-list">
-                            <div class="event-item">
-                                <div class="event-date">
-                                    <span class="day">20</span>
-                                    <span class="month">Nov</span>
-                                </div>
-                                <div class="event-info">
-                                    <h4>Lisa Peeters</h4>
-                                    <p>3:00 PM - Video Call</p>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <div class="event-date">
-                                    <span class="day">22</span>
-                                    <span class="month">Nov</span>
-                                </div>
-                                <div class="event-info">
-                                    <h4>Mark van der Berg</h4>
-                                    <p>10:00 AM - Office Visit</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
+                </section>
             </div>
-
-            <!-- Top Candidates -->
-            <section class="dashboard-section">
-                <div class="section-title">
-                    <h2>Top Matched Candidates</h2>
-                    <a href="#all-candidates" class="view-all">View All →</a>
-                </div>
-                <div class="candidates-grid">
-                    <div class="candidate-card">
-                        <div class="candidate-header">
-                            <div class="candidate-avatar large">LP</div>
-                            <span class="match-badge">92% Match</span>
-                        </div>
-                        <h3>Lisa Peeters</h3>
-                        <p class="candidate-education">MSc Computer Science, TU Delft</p>
-                        <div class="candidate-skills">
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">NLP</span>
-                        </div>
-                        <p class="candidate-bio">Passionate about AI applications in customer service. Previous research in sentiment analysis and chatbot optimization.</p>
-                        <div class="candidate-actions">
-                            <button class="btn btn-outline btn-small">View Profile</button>
-                            <button class="btn btn-primary btn-small">Contact</button>
-                        </div>
-                    </div>
-
-                    <div class="candidate-card">
-                        <div class="candidate-header">
-                            <div class="candidate-avatar large">MV</div>
-                            <span class="match-badge">88% Match</span>
-                        </div>
-                        <h3>Mark van der Berg</h3>
-                        <p class="candidate-education">MSc Data Science, Radboud University</p>
-                        <div class="candidate-skills">
-                            <span class="skill-tag">Blockchain</span>
-                            <span class="skill-tag">Supply Chain</span>
-                            <span class="skill-tag">Analytics</span>
-                        </div>
-                        <p class="candidate-bio">Experienced in blockchain technology and supply chain optimization. Completed internship at logistics company.</p>
-                        <div class="candidate-actions">
-                            <button class="btn btn-outline btn-small">View Profile</button>
-                            <button class="btn btn-primary btn-small">Contact</button>
-                        </div>
-                    </div>
-
-                    <div class="candidate-card">
-                        <div class="candidate-header">
-                            <div class="candidate-avatar large">SJ</div>
-                            <span class="match-badge">85% Match</span>
-                        </div>
-                        <h3>Sophie Janssen</h3>
-                        <p class="candidate-education">MSc AI Engineering, University of Amsterdam</p>
-                        <div class="candidate-skills">
-                            <span class="skill-tag">IoT</span>
-                            <span class="skill-tag">Smart Systems</span>
-                            <span class="skill-tag">Energy</span>
-                        </div>
-                        <p class="candidate-bio">Focused on IoT solutions for smart cities. Strong background in embedded systems and energy efficiency.</p>
-                        <div class="candidate-actions">
-                            <button class="btn btn-outline btn-small">View Profile</button>
-                            <button class="btn btn-primary btn-small">Contact</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 

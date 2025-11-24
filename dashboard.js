@@ -5,13 +5,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Small delay to ensure all scripts are loaded
     await new Promise(resolve => setTimeout(resolve, 100));
     
-    if (!isAuthenticated()) {
-        console.log('Not authenticated, redirecting to login');
-        window.location.href = 'login.html';
-        return;
-    }
+    // TEMPORARILY DISABLED - Authentication check on hold
+    // if (!isAuthenticated()) {
+    //     console.log('Not authenticated, redirecting to login');
+    //     window.location.href = 'login.html';
+    //     return;
+    // }
 
-    console.log('User authenticated, loading dashboard data');
+    console.log('Loading dashboard data');
     
     // Load user data and dashboard content
     try {
@@ -26,12 +27,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Load dashboard data from API
 async function loadDashboardData() {
     try {
-        const user = getCurrentUser();
+        let user = getCurrentUser();
         
+        // TEMPORARILY DISABLED - Mock user for development
         if (!user) {
-            console.log('No user in session, redirecting');
-            window.location.href = 'login.html';
-            return;
+            // console.log('No user in session, redirecting');
+            // window.location.href = 'login.html';
+            // return;
+            
+            // Mock user based on current page
+            const isStudentDashboard = window.location.pathname.includes('student-dashboard');
+            user = {
+                name: isStudentDashboard ? 'Test Student' : 'Test Company',
+                email: isStudentDashboard ? 'student@test.com' : 'company@test.com',
+                userType: isStudentDashboard ? 'student' : 'company'
+            };
         }
 
         // Update user info in header

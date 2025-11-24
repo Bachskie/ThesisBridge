@@ -336,10 +336,13 @@ applyBtns.forEach(btn => {
         const projectCard = this.closest('.project-card');
         const projectTitle = projectCard.querySelector('h3').textContent;
         
+        // TEMPORARILY DISABLED - Login requirement on hold
         // In a real app, this would open an application modal or redirect
-        if (confirm(`Apply for "${projectTitle}"?\n\nYou need to be signed in to apply.`)) {
-            window.location.href = 'login.html';
-        }
+        // if (confirm(`Apply for "${projectTitle}"?\n\nYou need to be signed in to apply.`)) {
+        //     window.location.href = 'login.html';
+        // }
+        
+        alert(`Application for "${projectTitle}" submitted! (Demo mode - login disabled)`);
     });
 });
 
