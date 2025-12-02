@@ -284,9 +284,9 @@
 
 /* Auth Side */
 .auth-side {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     padding: 3rem;
-    border-radius: 16px;
+    border-radius: 8px;
     color: white;
     position: sticky;
     top: 100px;

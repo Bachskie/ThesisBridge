@@ -25,20 +25,14 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="browse-projects.html">Browse Projects</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="student-dashboard.html" class="active">Student Dashboard</a></li>
-                    <li><a href="company-dashboard.html">Company Dashboard</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <div class="user-menu">
-                        <div class="user-avatar">JD</div>
-                        <span class="user-name">John Doe</span>
-                        <button class="dropdown-toggle">▼</button>
-                        <div class="dropdown-menu">
-                            <a href="#profile">Profile Settings</a>
-                            <a href="#notifications">Notifications</a>
-                            <a href="index.html">Logout</a>
-                        </div>
-                    </div>
+                    <span style="color: var(--text-gray); font-size: 0.9rem; margin-right: 1rem;">Viewing as: <strong>Student (Demo)</strong></span>
+                    <select id="demo-account-switcher" class="demo-switcher">
+                        <option value="student" selected>Student View</option>
+                        <option value="company">Company View</option>
+                        <option value="">Back to Home</option>
+                    </select>
                 </div>
                 <div class="hamburger">
                     <span></span>
@@ -58,7 +52,10 @@
                     <h1>Welcome back, John! 👋</h1>
                     <p>Find and apply to thesis projects</p>
                 </div>
-                <a href="browse-projects.html" class="btn btn-primary">Browse All Projects</a>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-outline" onclick="window.location.href='student-profile.html'">Edit Profile</button>
+                    <button class="btn btn-primary" onclick="window.location.href='browse-projects.html'">Browse Projects</button>
+                </div>
             </div>
 
             <!-- Main Dashboard Content -->
@@ -70,79 +67,7 @@
                         <a href="browse-projects.html" class="view-all">View All →</a>
                     </div>
                     <div class="projects-list">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <div class="company-logo">TI</div>
-                                <div class="project-meta">
-                                    <h3>AI-Powered Customer Service Analysis</h3>
-                                    <p class="company-name">TechInnovate B.V.</p>
-                                </div>
-                                <span class="badge badge-new">New</span>
-                            </div>
-                            <p class="project-description">Research the effectiveness of AI chatbots in customer service and develop improvement strategies.</p>
-                            <div class="project-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">NLP</span>
-                                <span class="tag">UX Research</span>
-                            </div>
-                            <div class="project-footer">
-                                <div class="project-info">
-                                    <span>📍 Nijmegen, NL</span>
-                                    <span>💰 €500/month</span>
-                                    <span>⏱️ 6 months</span>
-                                </div>
-                                <button class="btn btn-primary btn-small">Apply Now</button>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-header">
-                                <div class="company-logo">ES</div>
-                                <div class="project-meta">
-                                    <h3>Sustainable Packaging Solutions</h3>
-                                    <p class="company-name">EcoSolutions NL</p>
-                                </div>
-                                <span class="badge badge-match">95% Match</span>
-                            </div>
-                            <p class="project-description">Investigate biodegradable materials for food packaging and test their commercial viability.</p>
-                            <div class="project-tags">
-                                <span class="tag">Sustainability</span>
-                                <span class="tag">Materials Science</span>
-                                <span class="tag">Business</span>
-                            </div>
-                            <div class="project-footer">
-                                <div class="project-info">
-                                    <span>📍 Amsterdam, NL</span>
-                                    <span>💰 €750/month</span>
-                                    <span>⏱️ 9 months</span>
-                                </div>
-                                <button class="btn btn-primary btn-small">Apply Now</button>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-header">
-                                <div class="company-logo">FT</div>
-                                <div class="project-meta">
-                                    <h3>Blockchain in Supply Chain Management</h3>
-                                    <p class="company-name">FinTech Solutions</p>
-                                </div>
-                            </div>
-                            <p class="project-description">Explore blockchain applications for improving transparency and efficiency in supply chains.</p>
-                            <div class="project-tags">
-                                <span class="tag">Blockchain</span>
-                                <span class="tag">Supply Chain</span>
-                                <span class="tag">Data Analytics</span>
-                            </div>
-                            <div class="project-footer">
-                                <div class="project-info">
-                                    <span>📍 Rotterdam, NL</span>
-                                    <span>💰 €600/month</span>
-                                    <span>⏱️ 8 months</span>
-                                </div>
-                                <button class="btn btn-outline btn-small">Learn More</button>
-                            </div>
-                        </div>
+                        <!-- Projects loaded dynamically from projects.json -->
                     </div>
                 </section>
 
@@ -173,6 +98,6 @@
 
     <script src="api.js"></script>
     <script src="script.js"></script>
-    <script src="dashboard.js"></script>
+    <script src="dashboard-dynamic.js"></script>
 </body>
 </html>

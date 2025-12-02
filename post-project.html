@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Project - ThesisBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .post-form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        .form-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .skills-input-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .skill-tag {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .skill-tag button {
+            background: none;
+            border: none;
+            color: #1e40af;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+        }
+        .required {
+            color: #ef4444;
+        }
+        .icon-picker {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .icon-option {
+            font-size: 2rem;
+            padding: 0.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .icon-option:hover,
+        .icon-option.selected {
+            border-color: var(--primary-color);
+            background: var(--bg-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="logo-design">
+                        <span class="logo-icon">🎓</span>
+                        <span class="logo-text">
+                            <span class="thesis">Thesis</span><span class="bridge">Bridge</span>
+                        </span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse-projects.html">Browse Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <select id="demo-account-switcher" class="demo-switcher">
+                        <option value="company" selected>Company View</option>
+                        <option value="student">Student View</option>
+                        <option value="">Back to Home</option>
+                    </select>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="post-form-container">
+                <h1>Post a New Project</h1>
+                <p style="color: var(--text-gray); margin-bottom: 2rem;">Create a thesis project opportunity for students</p>
+
+                <form id="postProjectForm">
+                    <!-- Basic Information -->
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        
+                        <div class="form-group">
+                            <label>Project Title <span class="required">*</span></label>
+                            <input type="text" name="title" required placeholder="e.g., AI-Powered Customer Service Optimization">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Company Name <span class="required">*</span></label>
+                            <input type="text" name="company" required placeholder="Your Company Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category <span class="required">*</span></label>
+                            <select name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                <option value="Sustainability">Sustainability</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="Security">Security</option>
+                                <option value="Urban Planning">Urban Planning</option>
+                                <option value="Education">Education</option>
+                                <option value="Energy">Energy</option>
+                                <option value="Marketing">Marketing</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Icon <span class="required">*</span></label>
+                            <input type="hidden" name="icon" required>
+                            <div class="icon-picker">
+                                <div class="icon-option" data-icon="🤖">🤖</div>
+                                <div class="icon-option" data-icon="🌱">🌱</div>
+                                <div class="icon-option" data-icon="🔗">🔗</div>
+                                <div class="icon-option" data-icon="🧠">🧠</div>
+                                <div class="icon-option" data-icon="🏢">🏢</div>
+                                <div class="icon-option" data-icon="📊">📊</div>
+                                <div class="icon-option" data-icon="🔒">🔒</div>
+                                <div class="icon-option" data-icon="🚦">🚦</div>
+                                <div class="icon-option" data-icon="📱">📱</div>
+                                <div class="icon-option" data-icon="⚡">⚡</div>
+                                <div class="icon-option" data-icon="🍎">🍎</div>
+                                <div class="icon-option" data-icon="💬">💬</div>
+                                <div class="icon-option" data-icon="🔬">🔬</div>
+                                <div class="icon-option" data-icon="💡">💡</div>
+                                <div class="icon-option" data-icon="🎯">🎯</div>
+                                <div class="icon-option" data-icon="🚀">🚀</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="form-section">
+                        <h3>Project Details</h3>
+                        
+                        <div class="form-group">
+                            <label>Description <span class="required">*</span></label>
+                            <textarea name="description" required placeholder="Describe the project, goals, and what the student will work on..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Location <span class="required">*</span></label>
+                            <input type="text" name="location" required placeholder="City, Netherlands">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Duration <span class="required">*</span></label>
+                            <select name="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="3 months">3 months</option>
+                                <option value="6 months">6 months</option>
+                                <option value="7 months">7 months</option>
+                                <option value="8 months">8 months</option>
+                                <option value="9 months">9 months</option>
+                                <option value="10 months">10 months</option>
+                                <option value="12 months">12 months</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Compensation <span class="required">*</span></label>
+                            <input type="text" name="compensation" required placeholder="e.g., €500/month">
+                        </div>
+                    </div>
+
+                    <!-- Required Skills -->
+                    <div class="form-section">
+                        <h3>Required Skills</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">Add 3-6 skills that students should have</p>
+                        
+                        <div class="skills-input-container">
+                            <input type="text" id="skillInput" placeholder="Enter a skill and press Add">
+                            <button type="button" class="btn btn-outline" onclick="addSkill()">Add Skill</button>
+                        </div>
+                        <div class="skills-list" id="skillsList"></div>
+                        <input type="hidden" name="skills" id="skillsData">
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='company-dashboard.html'">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Post Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        let skills = [];
+
+        // Icon picker
+        document.querySelectorAll('.icon-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.icon-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                document.querySelector('input[name="icon"]').value = this.dataset.icon;
+            });
+        });
+
+        // Skills management
+        function addSkill() {
+            const skillInput = document.getElementById('skillInput');
+            const skill = skillInput.value.trim();
+            
+            if (skill && skills.length < 6) {
+                skills.push(skill);
+                updateSkillsList();
+                skillInput.value = '';
+            } else if (skills.length >= 6) {
+                alert('Maximum 6 skills allowed');
+            }
+        }
+
+        function removeSkill(index) {
+            skills.splice(index, 1);
+            updateSkillsList();
+        }
+
+        function updateSkillsList() {
+            const skillsList = document.getElementById('skillsList');
+            skillsList.innerHTML = skills.map((skill, index) => `
+                <div class="skill-tag">
+                    ${skill}
+                    <button type="button" onclick="removeSkill(${index})">×</button>
+                </div>
+            `).join('');
+            
+            document.getElementById('skillsData').value = JSON.stringify(skills);
+        }
+
+        // Allow adding skills with Enter key
+        document.getElementById('skillInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addSkill();
+            }
+        });
+
+        // Form submission
+        document.getElementById('postProjectForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (skills.length < 3) {
+                alert('Please add at least 3 required skills');
+                return;
+            }
+
+            const formData = new FormData(this);
+            const projectData = {
+                id: Date.now().toString(),
+                title: formData.get('title'),
+                company: formData.get('company'),
+                category: formData.get('category'),
+                icon: formData.get('icon'),
+                description: formData.get('description'),
+                location: formData.get('location'),
+                duration: formData.get('duration'),
+                compensation: formData.get('compensation'),
+                skills: skills,
+                status: 'open'
+            };
+
+            try {
+                // Load existing projects
+                const response = await fetch('projects.json');
+                const projects = await response.json();
+                
+                // Add new project
+                projects.push(projectData);
+                
+                // Save to localStorage for demo purposes
+                localStorage.setItem('projects', JSON.stringify(projects));
+                
+                alert('Project posted successfully! ✅\n\nNote: In production, this would save to the database. For this demo, the project is stored in browser storage.');
+                
+                // Redirect to company dashboard
+                window.location.href = 'company-dashboard.html';
+            } catch (error) {
+                console.error('Error posting project:', error);
+                alert('Error posting project. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -25,22 +25,14 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="browse-projects.html">Browse Projects</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="student-dashboard.html">Student Dashboard</a></li>
-                    <li><a href="company-dashboard.html" class="active">Company Dashboard</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <button class="btn btn-primary">Post New Project</button>
-                    <div class="user-menu">
-                        <div class="user-avatar">TI</div>
-                        <span class="user-name">TechInnovate</span>
-                        <button class="dropdown-toggle">▼</button>
-                        <div class="dropdown-menu">
-                            <a href="#company-profile">Company Profile</a>
-                            <a href="#billing">Billing</a>
-                            <a href="#settings">Settings</a>
-                            <a href="index.html">Logout</a>
-                        </div>
-                    </div>
+                    <span style="color: var(--text-gray); font-size: 0.9rem; margin-right: 1rem;">Viewing as: <strong>Company (Demo)</strong></span>
+                    <select id="demo-account-switcher" class="demo-switcher">
+                        <option value="company" selected>Company View</option>
+                        <option value="student">Student View</option>
+                        <option value="">Back to Home</option>
+                    </select>
                 </div>
                 <div class="hamburger">
                     <span></span>
@@ -60,7 +52,7 @@
                     <h1>Welcome, TechInnovate! 🚀</h1>
                     <p>Manage your thesis projects and review applications</p>
                 </div>
-                <button class="btn btn-primary" onclick="openPostProjectModal()">Post New Project</button>
+                <button class="btn btn-primary" onclick="window.location.href='post-project.html'">Post New Project</button>
             </div>
 
             <!-- Main Dashboard Content -->

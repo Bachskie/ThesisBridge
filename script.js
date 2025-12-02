@@ -17,6 +17,21 @@ if (hamburger && navMenu) {
     });
 }
 
+// Demo Account Switcher
+const demoSwitcher = document.getElementById('demo-account-switcher');
+if (demoSwitcher) {
+    demoSwitcher.addEventListener('change', (e) => {
+        const value = e.target.value;
+        if (value === 'student') {
+            window.location.href = 'student-dashboard.html';
+        } else if (value === 'company') {
+            window.location.href = 'company-dashboard.html';
+        } else if (value === '') {
+            window.location.href = 'index.html';
+        }
+    });
+}
+
 // Tabs Functionality
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabPanes = document.querySelectorAll('.tab-pane');

@@ -24,19 +24,14 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="browse-projects.html">Browse Projects</a></li>
                     <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="student-dashboard.html">Student Dashboard</a></li>
-                    <li><a href="company-dashboard.html">Company Dashboard</a></li>
                 </ul>
-                                <div class="nav-buttons">
-                    <button class="btn btn-secondary" onclick="window.location.href='login.html'">Sign In</button>
-                    <button class="btn btn-primary" onclick="window.location.href='signup.html'">Get Started</button>
+                <div class="nav-buttons">
+                    <select id="demo-account-switcher" class="demo-switcher">
+                        <option value="">Demo Accounts</option>
+                        <option value="student">Student View</option>
+                        <option value="company">Company View</option>
+                    </select>
                 </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -226,8 +221,8 @@
                 <h2>Join Our Community</h2>
                 <p>Whether you're a student or a company, start building meaningful partnerships today</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary btn-large" onclick="window.location.href='signup.html'">Sign Up as Student</button>
-                    <button class="btn btn-white btn-large" onclick="window.location.href='signup.html'">Sign Up as Company</button>
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='browse-projects.html'">Browse Projects</button>
+                    <button class="btn btn-white btn-large" onclick="window.location.href='index.html'">Back to Home</button>
                 </div>
             </div>
         </div>

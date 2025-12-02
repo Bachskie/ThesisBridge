@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student Profile - ThesisBridge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .profile-form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        .form-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .interest-checkbox {
+            display: flex;
+            align-items: center;
+            background: var(--bg-light);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .interest-checkbox:hover {
+            border-color: var(--primary-color);
+        }
+        .interest-checkbox input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+        .interest-checkbox input[type="checkbox"]:checked + label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .skills-input-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .skill-tag {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .skill-tag button {
+            background: none;
+            border: none;
+            color: #1e40af;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+        }
+        .required {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="logo-design">
+                        <span class="logo-icon">🎓</span>
+                        <span class="logo-text">
+                            <span class="thesis">Thesis</span><span class="bridge">Bridge</span>
+                        </span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse-projects.html">Browse Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <select id="demo-account-switcher" class="demo-switcher">
+                        <option value="student" selected>Student View</option>
+                        <option value="company">Company View</option>
+                        <option value="">Back to Home</option>
+                    </select>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="profile-form-container">
+                <h1>Complete Your Student Profile</h1>
+                <p style="color: var(--text-gray); margin-bottom: 2rem;">Set up your profile to get matched with relevant thesis projects</p>
+
+                <form id="studentProfileForm">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" name="name" required placeholder="Your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" required placeholder="your.email@university.nl">
+                        </div>
+
+                        <div class="form-group">
+                            <label>University <span class="required">*</span></label>
+                            <input type="text" name="university" required placeholder="e.g., Radboud University Nijmegen">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Study Program <span class="required">*</span></label>
+                            <input type="text" name="program" required placeholder="e.g., MSc Computer Science">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Expected Graduation <span class="required">*</span></label>
+                            <input type="month" name="graduation" required>
+                        </div>
+                    </div>
+
+                    <!-- Research Interests -->
+                    <div class="form-section">
+                        <h3>Research Interests</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">Select fields you're interested in (max 3)</p>
+                        
+                        <div class="interests-container">
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Artificial Intelligence">
+                                <span>Artificial Intelligence</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Sustainability">
+                                <span>Sustainability</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Technology">
+                                <span>Technology</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Healthcare">
+                                <span>Healthcare</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Engineering">
+                                <span>Engineering</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Data Science">
+                                <span>Data Science</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Security">
+                                <span>Security</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Urban Planning">
+                                <span>Urban Planning</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Education">
+                                <span>Education</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Energy">
+                                <span>Energy</span>
+                            </label>
+                            <label class="interest-checkbox">
+                                <input type="checkbox" name="interests" value="Marketing">
+                                <span>Marketing</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Thesis Details -->
+                    <div class="form-section">
+                        <h3>Thesis Requirements</h3>
+                        
+                        <div class="form-group">
+                            <label>Research Focus <span class="required">*</span></label>
+                            <textarea name="researchFocus" required placeholder="Briefly describe what you'd like to research for your thesis..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Start Date <span class="required">*</span></label>
+                            <input type="month" name="startDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Duration <span class="required">*</span></label>
+                            <select name="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="3 months">3 months</option>
+                                <option value="6 months">6 months</option>
+                                <option value="9 months">9 months</option>
+                                <option value="12 months">12 months</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Location</label>
+                            <input type="text" name="location" placeholder="e.g., Nijmegen, Netherlands (or Remote)">
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="form-section">
+                        <h3>Your Skills</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">Add your technical and research skills</p>
+                        
+                        <div class="skills-input-container">
+                            <input type="text" id="skillInput" placeholder="Enter a skill and press Add">
+                            <button type="button" class="btn btn-outline" onclick="addSkill()">Add Skill</button>
+                        </div>
+                        <div class="skills-list" id="skillsList"></div>
+                        <input type="hidden" name="skills" id="skillsData">
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='student-dashboard.html'">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        let skills = [];
+
+        // Skills management
+        function addSkill() {
+            const skillInput = document.getElementById('skillInput');
+            const skill = skillInput.value.trim();
+            
+            if (skill) {
+                skills.push(skill);
+                updateSkillsList();
+                skillInput.value = '';
+            }
+        }
+
+        function removeSkill(index) {
+            skills.splice(index, 1);
+            updateSkillsList();
+        }
+
+        function updateSkillsList() {
+            const skillsList = document.getElementById('skillsList');
+            skillsList.innerHTML = skills.map((skill, index) => `
+                <div class="skill-tag">
+                    ${skill}
+                    <button type="button" onclick="removeSkill(${index})">×</button>
+                </div>
+            `).join('');
+            
+            document.getElementById('skillsData').value = JSON.stringify(skills);
+        }
+
+        // Allow adding skills with Enter key
+        document.getElementById('skillInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addSkill();
+            }
+        });
+
+        // Limit interests selection to 3
+        const interestCheckboxes = document.querySelectorAll('input[name="interests"]');
+        interestCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkedCount = document.querySelectorAll('input[name="interests"]:checked').length;
+                if (checkedCount > 3) {
+                    this.checked = false;
+                    alert('You can select maximum 3 research interests');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('studentProfileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (skills.length < 1) {
+                alert('Please add at least one skill');
+                return;
+            }
+
+            const formData = new FormData(this);
+            const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked'))
+                .map(cb => cb.value);
+
+            if (interests.length === 0) {
+                alert('Please select at least one research interest');
+                return;
+            }
+
+            const profileData = {
+                id: Date.now().toString(),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                university: formData.get('university'),
+                program: formData.get('program'),
+                graduation: formData.get('graduation'),
+                interests: interests,
+                researchFocus: formData.get('researchFocus'),
+                startDate: formData.get('startDate'),
+                duration: formData.get('duration'),
+                location: formData.get('location'),
+                skills: skills,
+                createdAt: new Date().toISOString()
+            };
+
+            // Save to localStorage
+            localStorage.setItem('studentProfile', JSON.stringify(profileData));
+            
+            alert('Profile saved successfully! ✅\n\nYou can now browse and apply to projects that match your interests.');
+            
+            // Redirect to student dashboard
+            window.location.href = 'student-dashboard.html';
+        });
+    </script>
+</body>
+</html>

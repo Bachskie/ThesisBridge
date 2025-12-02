@@ -14,28 +14,30 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <div class="logo-design">
+                    <a href="index.html" class="logo-design">
                         <span class="logo-icon">🎓</span>
                         <span class="logo-text">
                             <span class="thesis">Thesis</span><span class="bridge">Bridge</span>
                         </span>
-                    </div>
+                    </a>
                 </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browse-projects.html">Browse Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="student-dashboard.html">Student Dashboard</a></li>
-                <li><a href="company-dashboard.html">Company Dashboard</a></li>
-            </ul>
-            <div class="nav-buttons">
-                <button class="btn btn-secondary" onclick="window.location.href='login.html'">Sign In</button>
-                <button class="btn btn-primary" onclick="window.location.href='signup.html'">Get Started</button>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="browse-projects.html">Browse Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <select id="demo-account-switcher" class="demo-switcher">
+                        <option value="">Demo Accounts</option>
+                        <option value="student">Student View</option>
+                        <option value="company">Company View</option>
+                    </select>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -48,8 +50,8 @@
                     <h1 class="hero-title">Bridge the Gap Between <span class="highlight">Students</span> and <span class="highlight">Innovation</span></h1>
                     <p class="hero-description">ThesisBridge connects university students seeking real-world research opportunities with companies looking for innovative solutions. Transform thesis projects into valuable partnerships.</p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary btn-large" onclick="window.location.href='signup.html'">For Students</button>
-                        <button class="btn btn-primary btn-large" onclick="window.location.href='signup.html'">For Companies</button>
+                        <button class="btn btn-primary btn-large" onclick="window.location.href='browse-projects.html'">Browse Projects</button>
+                        <button class="btn btn-outline btn-large" onclick="window.location.href='about.html'">Learn More</button>
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
@@ -241,8 +243,8 @@
                 <h2>Ready to Bridge the Gap?</h2>
                 <p>Join thousands of students and companies creating meaningful partnerships</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary btn-large" onclick="window.location.href='signup.html'">Sign Up as Student</button>
-                    <button class="btn btn-white btn-large" onclick="window.location.href='signup.html'">Sign Up as Company</button>
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='browse-projects.html'">Browse Projects</button>
+                    <button class="btn btn-white btn-large" onclick="window.location.href='about.html'">Learn More</button>
                 </div>
             </div>
         </div>
